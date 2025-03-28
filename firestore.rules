@@ -1,0 +1,27 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /establecimientos/{document=**} {
+      allow read, write: if true;
+    }
+  
+    // Colección administradores
+    match /administradores/{docId} {
+      allow read, write: if true;
+    }
+    // Colección establecimientos
+    match /establecimientos/{docId} {
+      allow read, write: if true;
+    }
+        // Colección areas
+    match /areas/{docId} {
+      allow read, write: if true;
+    }
+    // Colección autorizaciones
+    match /autorizaciones/{docId} {
+      allow read, write: if true;
+    }
+  }
+}
+
+
